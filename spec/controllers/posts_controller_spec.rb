@@ -5,7 +5,11 @@ require 'rails_helper'
 RSpec.describe PostsController, type: :controller do
   include Devise::Test::ControllerHelpers
 
-  let(:user) { user = User.create(email: 'test@test.com', first_name: "John", last_name: "Snow", password: "password", password_confirmation: "password") }
+  let(:user) { User.create(email: 'test@test.com', first_name: "John", last_name: "Snow", password: "password", password_confirmation: "password") }
+
+  let(:valid_attributes) do
+    return { message: "MyString", user_id: user.id }
+  end
 
   describe 'GET /new ' do
     it 'responds with 200' do
@@ -48,6 +52,28 @@ RSpec.describe PostsController, type: :controller do
   end
 
   describe 'PATCH #update' do
-    it 'returns user to edit page if no update params'
+    context "with valid params" do
+      it 'updates the requested post' do
+        sign_in user
+
+        post = Post.create(message: 'text', user_id: user.id)
+
+        put :update, params: { id: post.id, post: { message: "new post" } }
+
+        post.reload
+
+        expect(response).to redirect_to '/posts'
+      end
+
+      it 'redirect to edit partial if invalid update' do
+        sign_in user
+
+        post = Post.create(message: 'text', user_id: user.id)
+
+        put :update, params: { id: post.id, post: { message: "" } }
+
+        expect(response).to render_template :edit
+      end
+    end
   end
 end

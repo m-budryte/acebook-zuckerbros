@@ -1,17 +1,16 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
-
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: %i[index show]
 
   def new
-    @post = current_user.posts.build 
+    @post = current_user.posts.build
   end
 
   def create
     @post = current_user.posts.build(post_params)
     @post.save
-   
+
     redirect_to posts_url
   end
 
@@ -25,12 +24,11 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    respond_to do |format|
-      if @post.update(post_params)
-        format.html { redirect_to posts_url }
-      else
-        format.html { render :edit }
-      end
+
+    if @post.update(post_params)
+      redirect_to posts_url
+    else
+      render :edit
     end
   end
 
@@ -38,13 +36,11 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
-
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
     redirect_to posts_url
   end
-
 
   private
 

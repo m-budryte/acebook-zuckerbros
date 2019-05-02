@@ -63,3 +63,102 @@ Room_channel.rb
 Make a CoffeeScript program (room.coffee) for the chat room on the client side (web browser).
 
 Update the Messages controller create action to broadcast changes to the channel instead of redirecting or rendering.
+
+**Flexbox:**
+define container:
+.container {
+display:flex
+height: 100vh //stretches the entire height of the view
+}
+
+- goes all away across the page
+
+inlineflex wraps around the content
+
+- by defining container as flex, all the children of the container become flex items
+
+### Flex direction
+
+flex-direction:row
+flex-direction:column
+
+- row is default
+- column : stacks flex boxes vertically
+
+Here we have 2 main axeses
+Default:
+
+- main axis when is row is left to right
+- cross axis goes top to bottom when in
+
+Column:
+
+- main axis is top to bottom
+
+There is reverse
+
+- column-reverse
+- row-reverse
+
+Flex wrap
+
+- givin elements widths
+- can select individual flex items - individual items in the container flex
+
+Order property - put ont he class
+order: 1
+order: 2
+
+Alignment
+
+justify content - alignment of items on main axis
+justify-content: space-between
+justify-content: center
+justify-content: flex-end
+justify-content: flex-start
+
+Inline items
+
+- give height to container
+
+Can use:
+
+- align-items:center
+- align-items:stretch
+- align-items:flex-end
+- align-items:flex-start
+- align-items:baseline (looks at text and aligns bottom of text)
+
+Align content
+
+- only works when we have multiple lines
+
+Align-self = can apply yo infividual items insteand on the same container
+
+Felxbox sizing:
+box {
+flex: ; //proportion of scaling up or down
+}
+
+Flex-grow:1 - divided extra space between everyone
+Flex-shrink:1 -divide extra space equally
+flex-basis:400px
+
+box1{
+flex-basis:400px;
+flex-grow:1; //this will take the resto fo the space
+}
+
+//How to deal with extra space - use flex-grow
+
+box2 {
+flex-basis:400px;
+flex-grow:0
+}
+
+Default for flexbox is to divide equally
+flex-shrink:5 - this is t times smaller than the other one
+flex-shrink:1
+
+We can do it like this
+flex: 10(grow) 5(shring) (basis)

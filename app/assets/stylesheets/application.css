@@ -13,3 +13,107 @@
  *= require_tree .
  *= require_self
  */
+
+.container-message {
+  display: flex;
+  justify-content: center;
+}
+
+.message-wr {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  flex-direction: row;
+  margin: 25px 10px;
+
+  height: calc(100% - 50px);
+  width: 500px;
+}
+
+/*=flex item*/
+
+.message-window {
+  flex-grow: 5;
+  flex-direction: column wrap;
+  justify-content: center;
+  min-height: 50vh;
+  font-family: Helvetica, sans-serif;
+  box-shadow: 0 15px 15px -5px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  min-height: 75vh;
+}
+.messages-table {
+  justify-content: center;
+  height: 75vh;
+  width: 100%;
+  flex: 1;
+  overflow-y: scroll;
+}
+.messages {
+  width: 100%;
+  justify-content: flex-end;
+}
+.message {
+  /* background-color: green; */
+  padding: 10px;
+}
+
+.msg-bubble {
+  width: 100%;
+  padding: 15px;
+  border-radius: 15px;
+  background-color: #5ca0d3;
+}
+.msg-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.message-user {
+  margin-right: 10px;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+.message-time {
+  font-size: 1em;
+}
+
+.message .msg-bubble {
+  color: #fff;
+  border-bottom-right-radius: 0;
+}
+
+.message-input {
+  display: flex;
+  padding: 10px;
+  background: #eee;
+}
+
+.message-input * {
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  font-size: 1em;
+}
+
+.new_message {
+  width: 100%;
+  display: flex;
+}
+.msger-input {
+  flex: 1;
+  background: #ddd;
+}
+.msger-send-btn {
+  margin-left: 10px;
+  background: rgb(0, 196, 65);
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.23s;
+}
+.msger-send-btn:hover {
+  background: rgb(0, 180, 50);
+}

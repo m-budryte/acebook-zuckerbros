@@ -12,3 +12,11 @@
 //
 //= require rails-ujs
 //= require_tree .
+
+//On logout - update the users table
+
+$(document).ready(function() {
+  $('#logout').click(function() {
+    alert('test');
+  });
+});

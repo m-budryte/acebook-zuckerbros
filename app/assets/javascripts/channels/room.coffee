@@ -7,5 +7,26 @@ App.room = App.cable.subscriptions.create "RoomChannel",
 
   received: (data) ->
     unless data.content.blank?
-      $('#messages-table').append '<div class="message">' + '<div class="message-user">' + data.first_name + ":" + '</div>' + '<div class="message-content">' + data.content + '</div>' + '</div>'
+      options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+
+      html = '<div class="message">'
+      html += '<div class = "msg-bubble">'
+      html += '<div class = "msg-info">'
+      html += '<div class="message-user"><strong>'
+      html += data.first_name
+      html += ':</strong></div>'
+      html += '<div class="message-time">'
+      html += new Date().toLocaleString()
+      html += '</div>'
+      html += '</div>'
+      html += '<div class="message-content"><p>'
+      html += data.content 
+      html += '</p></div></div></div>'
+
+      $('#messages-table').append(html)
+      $('#messages-table').scrollTop($('#messages-table')[0].scrollHeight);
+
+
+      
+
     # Called when there's incoming data on the websocket for this channel

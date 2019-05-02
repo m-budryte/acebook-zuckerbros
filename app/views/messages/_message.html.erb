@@ -1,8 +1,21 @@
 <div class="message">
-  <div class="message-user">
-    <%= message.user.first_name %>:
+
+  <div class = 'msg-bubble'>
+  
+  <div class = 'msg-info'>
+    <div class="message-user">
+    <strong><%= message.user.first_name %>:</strong>
   </div>
+  <div class="message-time">
+    <%= message.created_at.strftime('%b %d, %H:%M ') %>
+  </div>
+  </div>
+
+
   <div class="message-content">
-    <%= message.content %>
+    <p><%= message.content %></p>
   </div>
+  
+  </div>
+
 </div>

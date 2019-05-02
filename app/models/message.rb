@@ -2,5 +2,5 @@
 
 class Message < ApplicationRecord
   belongs_to :user
-  scope :for_display, -> { order(created_at: :desc).last(50) }
+  scope :for_display, -> { order(created_at: :desc).first(50) }
 end

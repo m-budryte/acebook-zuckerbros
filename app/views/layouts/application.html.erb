@@ -16,7 +16,9 @@
 
   <nav class="navbar navbar-dark bg-dark">
 
-  <span class="navbar-brand mb-0 h1">Zuckerbros</span>
+  <span class="navbar-brand mb-0 h1">
+  <%= link_to 'Zukerbros', posts_path, class:'btn-dark-ace btn-disabled' %>
+  </span>
 
   <ul class="nav justify-content-end">
       <% if !user_signed_in? %>

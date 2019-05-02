@@ -14,9 +14,20 @@
  *= require_self
  */
 
+.navbar {
+  background-color: #69779b;
+}
 .container-message {
   display: flex;
   justify-content: center;
+}
+
+.btn-dark-ace {
+  color: #fff;
+}
+
+.btn-disabled:hover {
+  text-decoration: none;
 }
 
 .message-wr {

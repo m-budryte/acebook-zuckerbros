@@ -19,4 +19,8 @@ $(document).ready(function() {
   $('#logout').click(function() {
     alert('test');
   });
+
+  // $('#msg_send_btn').click(function() {
+  //   $('#message_content').val('');
+  // });
 });

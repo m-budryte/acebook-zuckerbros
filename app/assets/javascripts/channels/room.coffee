@@ -7,7 +7,6 @@ App.room = App.cable.subscriptions.create "RoomChannel",
 
   received: (data) ->
     unless data.content.blank?
-      options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
       html = '<div class="message">'
       html += '<div class = "msg-bubble">'
@@ -24,6 +23,9 @@ App.room = App.cable.subscriptions.create "RoomChannel",
       html += '</p></div></div></div>'
 
       $('#messages-table').prepend(html)
+      $('#text_area_message').val('');
+    
+
       # $('#messages-table').scrollTop($('#messages-table')[0].scrollHeight);
 
       

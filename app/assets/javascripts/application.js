@@ -1,3 +1,4 @@
+// require jquery
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
@@ -10,9 +11,8 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
-//= require_tree .
-
-$(document).on('turbolinks:load', function() {
-  $('#messages-table').append('Hello, World!');
-});
+// require rails-ujs
+// require_tree .
+// $(document).on('turbolinks:load', function() {
+//   $('#messages-table').append('hello, world1!');
+// });

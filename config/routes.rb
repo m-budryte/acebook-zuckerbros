@@ -9,4 +9,5 @@ Rails.application.routes.draw do
 
   root 'posts#index'
 
+  mount ActionCable.server, at: '/cable'
 end

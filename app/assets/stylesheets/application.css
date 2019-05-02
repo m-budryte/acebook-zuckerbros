@@ -128,3 +128,38 @@
 .msger-send-btn:hover {
   background: rgb(0, 180, 50);
 }
+
+header {
+  padding: 0;
+  position: relative;
+}
+
+#wrapper {
+  background-color: #fff;
+  width: 500px;
+  margin: 30px auto 0;
+  border-top: 0;
+  border-radius: 6px;
+  padding: 20px;
+  box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+.name,
+.date {
+  margin: 0;
+}
+
+.name {
+  color: #385a97;
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.date {
+  font-size: 12px;
+  color: #90949c;
+}
+
+.container-fluid {
+  padding-top: 10px;
+}

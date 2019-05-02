@@ -5,24 +5,22 @@
         <%= link_to new_post_path, :class => "btn btn-outline-success" do %>New post<% end %>
       </div><br>
       <%end%>
-
-      <div class="container">
-        <% @posts.each do |post| %>
-          <div class="card">
-            <div class="card-body">
-              <p> Posted by: <%= post.user.first_name %>
-
-              <h3><%= post.message %></h3>
-                <% if post.user == current_user %>
-                  <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-outline-danger" %>
-                  <%= link_to edit_post_path(post), :class => "btn btn-outline-dark" do %>
-                    Edit
-                  <% end %><br><br>
-                <% end %>
-                <p class="text-right"><%= post.created_at.strftime('%b %d, %H:%M ') %></p>
-            </div>
-          </div><br>
-        <% end %>
-      </div>
-    </center>
   </div>
+    
+
+    <% @posts.each do |post| %>
+    
+<div id="wrapper">
+    <header class="cf">
+      <h1 class="name"><%= post.user.first_name%></h1>
+      <p class="date"><%= post.created_at.strftime('%b %d, %H:%M ') %></p>
+    </header>
+
+    <h4 class="status"><%= post.message%> </h4>
+
+      <% if post.user == current_user %>
+        <%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-outline-danger" %>
+        <%= link_to 'Edit', edit_post_path(post), :class => "btn btn-outline-dark"%>
+      <% end %>
+</div>
+<%end%>

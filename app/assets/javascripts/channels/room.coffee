@@ -23,9 +23,8 @@ App.room = App.cable.subscriptions.create "RoomChannel",
       html += data.content 
       html += '</p></div></div></div>'
 
-      $('#messages-table').append(html)
-      $('#messages-table').scrollTop($('#messages-table')[0].scrollHeight);
-
+      $('#messages-table').prepend(html)
+      # $('#messages-table').scrollTop($('#messages-table')[0].scrollHeight);
 
       
 

@@ -12,3 +12,7 @@
 //
 //= require rails-ujs
 //= require_tree .
+
+$(document).on('turbolinks:load', function() {
+  $('#messages-table').append('Hello, World!');
+});

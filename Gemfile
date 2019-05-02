@@ -19,6 +19,8 @@ gem 'pg'
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+gem 'coffee-rails','~> 4.2.1'
+gem 'jquery-rails','~> 4.1.1'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -26,6 +28,7 @@ gem 'uglifier', '>= 1.3.0'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
+gem 'turbolinks','~> 5.0.0'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -49,6 +52,12 @@ group :development, :test do
   gem 'simplecov-console'
   gem 'simplecov-shields-badge', require: false
   gem 'devise'
+  gem 'rails-controller-testing', '0.1.1'
+  gem 'minitest-reporters',       '1.1.9'
+  gem 'guard',                    '2.13.0'
+  gem 'guard-minitest',           '2.4.4'
+  gem 'spring',                '1.7.2'
+  gem 'spring-watcher-listen', '2.0.0'
 end
 
 group :development do

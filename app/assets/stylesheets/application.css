@@ -15,7 +15,7 @@
  */
 
 .navbar {
-  background-color: #69779b;
+  background-color: #7189bf;
 }
 .container-message {
   display: flex;
@@ -30,15 +30,34 @@
   text-decoration: none;
 }
 
+.signup,
+.signin {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  width: 100%;
+}
+
+.signup-interior {
+}
+
 .message-wr {
+  background-color: #fff;
+  border-radius: 10px;
   display: flex;
   height: 100vh;
   justify-content: center;
   flex-direction: row;
   margin: 25px 10px;
-
   height: calc(100% - 50px);
   width: 500px;
+}
+
+#post_message {
+  display: flex;
+  padding: 20px;
+  background: #fff;
+  font-family: Helvetica, sans-serif;
 }
 
 /*=flex item*/
@@ -52,6 +71,19 @@
   box-shadow: 0 15px 15px -5px rgba(0, 0, 0, 0.2);
   padding: 10px;
   min-height: 75vh;
+}
+
+.message-post {
+  background-color: #fff;
+  flex-grow: 5;
+  flex-direction: column wrap;
+  justify-content: center;
+  min-height: 10vh;
+  font-family: Helvetica, sans-serif;
+  box-shadow: 0 15px 15px -5px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  border-radius: 20px;
+  min-height: 10vh;
 }
 .messages-table {
   justify-content: center;
@@ -73,7 +105,7 @@
   width: 100%;
   padding: 15px;
   border-radius: 15px;
-  background-color: #5ca0d3;
+  background-color: #df7599;
 }
 .msg-info {
   display: flex;
@@ -99,7 +131,7 @@
 .message-input {
   display: flex;
   padding: 10px;
-  background: #eee;
+  background: #fff;
 }
 
 .message-input * {
@@ -115,7 +147,7 @@
 }
 .msger-input {
   flex: 1;
-  background: #ddd;
+  background: #ececec;
 }
 .msger-send-btn {
   margin-left: 10px;
@@ -162,4 +194,33 @@ header {
 
 .container-fluid {
   padding-top: 10px;
+}
+
+/*notification wrapper*/
+#notice_alert {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background: rgba(225, 98, 98, 0.9);
+}
+
+#notice_wrapper {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background: rgba(135, 216, 211, 0.9);
+}
+
+.alert,
+.notice {
+  padding: 1.75rem 0;
+  text-align: center;
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: FFFFFF;
+  color: #ffffff;
+  letter-spacing: 1px;
 }

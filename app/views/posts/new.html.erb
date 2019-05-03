@@ -1,6 +1,8 @@
-    <div class="create">
+    
+    <div class="container-message">
     <center>
-      <div class="containter">
+      <div class="message-wr">
+      <div class="message-post">
         <%= form_for(@post) do |form| %>
         <div class="field">
           <h3><%= form.label :message %><br><h3>
@@ -10,6 +12,7 @@
           <%= form.submit "Post!", :class => "btn btn-outline-success" %>
         </div>
         <% end %>
+      </div>
       </div>
     </center>
   </div>

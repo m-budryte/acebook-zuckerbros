@@ -1,35 +1,18 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  </head>
-
-  <div class="container-fluid">
-    <div class="jumbotron bg-info text-white">
-      <h1 class="display-4">What'cha Up To?</h1>
-      <p class="lead">How about you make a post to tell the world your thoughts...</p>
-    </div>
-  </div>
-
-  <div class="create">
+    
+    <div class="container-message">
     <center>
-      <div class="containter">
+      <div class="message-wr">
+      <div class="message-post">
         <%= form_for(@post) do |form| %>
         <div class="field">
           <h3><%= form.label :message %><br><h3>
-          <%= form.text_field :message %>
+          <%= form.text_area :message, rows: 3 %>
         </div>
         <div class="actions">
           <%= form.submit "Post!", :class => "btn btn-outline-success" %>
         </div>
         <% end %>
       </div>
+      </div>
     </center>
   </div>
-
-</html>

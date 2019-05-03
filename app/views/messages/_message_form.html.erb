@@ -1,0 +1,6 @@
+<div class="message-input">
+  <%= form_for(@message, remote: true) do |f| %>
+    <%= f.text_area :content, rows: 1, columns: 10, class:'msger-input', id:"text_area_message"%>
+    <%= f.submit 'Send', class:'msger-send-btn', id:'msg_send_btn'  %>
+  <% end %>
+</div>

@@ -8,3 +8,19 @@ Style/StringLiterals:
 
 Style/NumericLiterals:
   Enabled: false
+Naming/AccessorMethodName:
+  Enabled: false
+Documentation:
+  Enabled: false
+
+AllCops:
+  Exclude:
+    - 'db/**/*'
+    - 'spec/**/*'
+    - 'config/initializers/devise.rb'
+    - 'app/mailers/*'
+    - 'app/models/*'
+    - 'app/helpers/*'
+    - 'bin/update'
+    - 'bin/setup'
+    - 'config/application.rb'

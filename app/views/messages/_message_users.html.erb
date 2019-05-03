@@ -1,0 +1,10 @@
+<div class="logged_users">
+
+<% @users = User.all %>
+<% @users.each do |u| %>
+<% if user_signed_in? %>
+<p>User: <%= u.first_name %></p>
+<%end%>
+<%end%>
+</div>
+

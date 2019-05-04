@@ -10,14 +10,9 @@ class MessagesController < ApplicationController
   def create
     message = current_user.messages.build(message_params)
     if message.save
-      ActionCable.server.broadcast 'room_channel',
-          message: render_message(message)
+      ActionCable.server.broadcast 'room_channel', content: message.content, first_name: message.user.first_name
     end
-      # redirect_to messages_url
-    # else
-    #   render 'index'
-    # end
-  end
+  end 
 
   private
 
@@ -30,7 +25,7 @@ class MessagesController < ApplicationController
     params.require(:message).permit(:content)
   end
 
-  def render_message(message)
-    render(partial: 'message', locals: { message: message })
-  end
+  # def render_message(message)
+  #   render(partial: 'message', locals: { message: message })
+  # end
 end

@@ -14,7 +14,9 @@
 
   <nav class="navbar navbar-dark bg-dark">
 
-  <span class="navbar-brand mb-0 h1">Zuckerbros</span>
+  <span class="navbar-brand mb-0 h1">
+  <%= link_to 'Zuckerbros', posts_path, class:'btn-dark-ace btn-disabled'%>
+  </span>
 
   <ul class="nav justify-content-end">
       <% if !user_signed_in? %>
@@ -25,6 +27,9 @@
           <%= link_to "Sign in", new_user_session_path, :class => "btn text-light" %>
         </li>
         <% else %>
+        <li class="nav-item">
+          <%= link_to "Chat", messages_path, :class => "btn text-light" %>
+        </li>        
         <li class="nav-item">
           <%= link_to "Log out", destroy_user_session_path, :method => :delete, :class => "btn text-light" %>
         </li>

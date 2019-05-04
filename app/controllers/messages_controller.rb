@@ -11,11 +11,12 @@ class MessagesController < ApplicationController
     message = current_user.messages.build(message_params)
     if message.save
       ActionCable.server.broadcast 'room_channel',
-                message: render_message(message)
+          message: render_message(message)
+    end
       # redirect_to messages_url
     # else
     #   render 'index'
-    end
+    # end
   end
 
   private

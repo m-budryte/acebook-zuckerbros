@@ -2,8 +2,8 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-message_appender = (content) ->
-  $('#messages-table').append content
+# message_appender = (content) ->
+#   $('#messages-table').append content
 
-$(document).on 'turbolinks:load', ->
-  message_appender('hello, world!')
+# $(document).on 'turbolinks:load', ->
+#   message_appender('hello, world!')

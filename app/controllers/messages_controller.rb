@@ -1,18 +1,20 @@
 class MessagesController < ApplicationController
 
-  before_action :user_signed_in?
+  before_action :authenticate_user!
   before_action :get_messages
 
   def index
-    p @message
+    # p @message
   end
 
   def create
     message = current_user.messages.build(message_params)
     if message.save
-      redirect_to messages_url
-    else
-      render 'index'
+      ActionCable.server.broadcast 'room_channel',
+                message: render_message(message)
+      # redirect_to messages_url
+    # else
+    #   render 'index'
     end
   end
 
@@ -27,4 +29,7 @@ class MessagesController < ApplicationController
     params.require(:message).permit(:content)
   end
 
+  def render_message(message)
+    render(partial: 'message', locals: { message: message })
+  end
 end

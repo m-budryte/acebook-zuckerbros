@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   resources :messages
 
   root 'posts#index'
+  
+  mount ActionCable.server, at: '/cable'
 
 end

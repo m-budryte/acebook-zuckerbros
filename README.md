@@ -15,6 +15,8 @@ Currently 1 and 2 are completed and 3 is in progression. Next step is to have po
 
 The app was deployed on the AWS server. http://production.ujbndkqft3.eu-west-2.elasticbeanstalk.com/
 
+![](Screenshot1.png)
+
 ## Setup instructions
 - clone repo
 run
